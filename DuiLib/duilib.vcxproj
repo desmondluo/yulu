@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Dev\duilib\DuiLib;D:\Dev\duilib\DuiLib\Control;D:\Dev\duilib\DuiLib\Core;D:\Dev\duilib\DuiLib\Layout;D:\Dev\duilib\DuiLib\Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DuiLib;$(SolutionDir)DuiLib\Control;$(SolutionDir)DuiLib\Core;$(SolutionDir)DuiLib\Layout;$(SolutionDir)DuiLib\Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -142,7 +142,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Dev\duilib\DuiLib;D:\Dev\duilib\DuiLib\Control;D:\Dev\duilib\DuiLib\Core;D:\Dev\duilib\DuiLib\Layout;D:\Dev\duilib\DuiLib\Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DuiLib;$(SolutionDir)DuiLib\Control;$(SolutionDir)DuiLib\Core;$(SolutionDir)DuiLib\Layout;$(SolutionDir)DuiLib\Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -301,100 +301,44 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Dev\duilib\DuiLib\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Dev/duilib/DuiLib/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Dev/duilib -BD:/Dev/duilib --check-stamp-file D:/Dev/duilib/DuiLib/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Dev\duilib\DuiLib\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Dev/duilib/DuiLib/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Dev/duilib -BD:/Dev/duilib --check-stamp-file D:/Dev/duilib/DuiLib/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Dev\duilib\DuiLib\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Dev/duilib/DuiLib/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Dev/duilib -BD:/Dev/duilib --check-stamp-file D:/Dev/duilib/DuiLib/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Dev\duilib\DuiLib\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Dev/duilib/DuiLib/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Dev/duilib -BD:/Dev/duilib --check-stamp-file D:/Dev/duilib/DuiLib/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Dev\duilib\DuiLib\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIActiveX.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIButton.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UICheckBox.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UICombo.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIDateTime.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIEdit.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIFlash.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIGifAnim.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UILabel.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIList.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIOption.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIProgress.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIRichEdit.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIScrollBar.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UISlider.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIText.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UITreeView.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Control\UIWebBrowser.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIBase.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIContainer.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIControl.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIDlgBuilder.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIManager.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIMarkup.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Core\UIRender.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Layout\UIChildLayout.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Layout\UIHorizontalLayout.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Layout\UITabLayout.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Layout\UITileLayout.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Layout\UIVerticalLayout.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Utils\UIDelegate.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Utils\Utils.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Utils\WinImplBase.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Utils\WndShadow.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Utils\XUnzip.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\Utils\stb_image.c" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\StdAfx.cpp" />
-    <ClCompile Include="D:\Dev\duilib\DuiLib\UIlib.cpp" />
+    <ClCompile Include="Control\UIActiveX.cpp" />
+    <ClCompile Include="Control\UIButton.cpp" />
+    <ClCompile Include="Control\UICheckBox.cpp" />
+    <ClCompile Include="Control\UICombo.cpp" />
+    <ClCompile Include="Control\UIDateTime.cpp" />
+    <ClCompile Include="Control\UIEdit.cpp" />
+    <ClCompile Include="Control\UIFlash.cpp" />
+    <ClCompile Include="Control\UIGifAnim.cpp" />
+    <ClCompile Include="Control\UILabel.cpp" />
+    <ClCompile Include="Control\UIList.cpp" />
+    <ClCompile Include="Control\UIOption.cpp" />
+    <ClCompile Include="Control\UIProgress.cpp" />
+    <ClCompile Include="Control\UIRichEdit.cpp" />
+    <ClCompile Include="Control\UIScrollBar.cpp" />
+    <ClCompile Include="Control\UISlider.cpp" />
+    <ClCompile Include="Control\UIText.cpp" />
+    <ClCompile Include="Control\UITreeView.cpp" />
+    <ClCompile Include="Control\UIWebBrowser.cpp" />
+    <ClCompile Include="Core\UIBase.cpp" />
+    <ClCompile Include="Core\UIContainer.cpp" />
+    <ClCompile Include="Core\UIControl.cpp" />
+    <ClCompile Include="Core\UIDlgBuilder.cpp" />
+    <ClCompile Include="Core\UIManager.cpp" />
+    <ClCompile Include="Core\UIMarkup.cpp" />
+    <ClCompile Include="Core\UIRender.cpp" />
+    <ClCompile Include="Layout\UIChildLayout.cpp" />
+    <ClCompile Include="Layout\UIHorizontalLayout.cpp" />
+    <ClCompile Include="Layout\UITabLayout.cpp" />
+    <ClCompile Include="Layout\UITileLayout.cpp" />
+    <ClCompile Include="Layout\UIVerticalLayout.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="UIlib.cpp" />
+    <ClCompile Include="Utils\stb_image.c" />
+    <ClCompile Include="Utils\UIDelegate.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
+    <ClCompile Include="Utils\WinImplBase.cpp" />
+    <ClCompile Include="Utils\WndShadow.cpp" />
+    <ClCompile Include="Utils\XUnzip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Dev\duilib\ZERO_CHECK.vcxproj">
@@ -403,6 +347,53 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Control\UIActiveX.h" />
+    <ClInclude Include="Control\UIButton.h" />
+    <ClInclude Include="Control\UICheckBox.h" />
+    <ClInclude Include="Control\UICombo.h" />
+    <ClInclude Include="Control\UIDateTime.h" />
+    <ClInclude Include="Control\UIEdit.h" />
+    <ClInclude Include="Control\UIFlash.h" />
+    <ClInclude Include="Control\UIGifAnim.h" />
+    <ClInclude Include="Control\UILabel.h" />
+    <ClInclude Include="Control\UIList.h" />
+    <ClInclude Include="Control\UIOption.h" />
+    <ClInclude Include="Control\UIProgress.h" />
+    <ClInclude Include="Control\UIRichEdit.h" />
+    <ClInclude Include="Control\UIScrollBar.h" />
+    <ClInclude Include="Control\UISlider.h" />
+    <ClInclude Include="Control\UIText.h" />
+    <ClInclude Include="Control\UITreeView.h" />
+    <ClInclude Include="Control\UIWebBrowser.h" />
+    <ClInclude Include="Core\UIBase.h" />
+    <ClInclude Include="Core\UIContainer.h" />
+    <ClInclude Include="Core\UIControl.h" />
+    <ClInclude Include="Core\UIDefine.h" />
+    <ClInclude Include="Core\UIDlgBuilder.h" />
+    <ClInclude Include="Core\UIManager.h" />
+    <ClInclude Include="Core\UIMarkup.h" />
+    <ClInclude Include="Core\UIRender.h" />
+    <ClInclude Include="Layout\UIChildLayout.h" />
+    <ClInclude Include="Layout\UIHorizontalLayout.h" />
+    <ClInclude Include="Layout\UITabLayout.h" />
+    <ClInclude Include="Layout\UITileLayout.h" />
+    <ClInclude Include="Layout\UIVerticalLayout.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="UIlib.h" />
+    <ClInclude Include="Utils\downloadmgr.h" />
+    <ClInclude Include="Utils\FlashEventHandler.h" />
+    <ClInclude Include="Utils\stb_image.h" />
+    <ClInclude Include="Utils\UIDelegate.h" />
+    <ClInclude Include="Utils\Utils.h" />
+    <ClInclude Include="Utils\WebBrowserEventHandler.h" />
+    <ClInclude Include="Utils\WinImplBase.h" />
+    <ClInclude Include="Utils\WndShadow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DuiLib.vcproj" />
+    <None Include="Utils\flash11.tlh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
