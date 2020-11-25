@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "duilib", "DuiLib\duilib.vcxproj", "{0A7C169D-5649-3090-A0BC-769E64525AD9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "yulu", "yulu\yulu.vcxproj", "{E67F78DD-0D1E-4F17-853F-871A0CA5829B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A7C169D-5649-3090-A0BC-769E64525AD9} = {0A7C169D-5649-3090-A0BC-769E64525AD9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
