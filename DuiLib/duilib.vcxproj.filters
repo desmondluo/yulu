@@ -91,5 +91,6 @@
   <ItemGroup>
     <None Include="Utils\flash11.tlh" />
     <None Include="DuiLib.vcproj" />
+    <None Include="文档.md" />
   </ItemGroup>
 </Project>

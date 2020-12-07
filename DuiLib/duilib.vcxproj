@@ -394,6 +394,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <None Include="DuiLib.vcproj" />
     <None Include="Utils\flash11.tlh" />
+    <None Include="文档.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
