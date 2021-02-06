@@ -22,7 +22,13 @@
 // DUILIB
 #include <Duilib/UIlib.h>
 using namespace DuiLib;
+#ifdef _DEBUG
+#pragma comment(lib, "duilib_d.lib")
+#else
 #pragma comment(lib, "duilib.lib")
+#endif // DEBUG
+
+
 
 //! 定义的一些输出的宏
 enum trace_level
